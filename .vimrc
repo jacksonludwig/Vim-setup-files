@@ -37,6 +37,7 @@ Plug 'vim-utils/vim-man'
 Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plug 'jremmen/vim-ripgrep'
 Plug 'Chiel92/vim-autoformat'
+Plug 'https://github.com/tpope/vim-endwise.git'
 call plug#end()
 
 colorscheme gruvbox
@@ -58,7 +59,6 @@ let g:ctrlp_use_caching = 0
 let g:ycm_python_binary_path = 'python3'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_min_num_of_chars_for_completion = 1
-
 
 " Extra map stuff below
 nnoremap <leader>h :wincmd h<CR>
@@ -106,11 +106,6 @@ fun! TrimWhitespace()
     keeppatterns %s/\s\+$//e
     call winrestview(l:save)
 endfun
-
-" These lines are likely not needed with autoformatter
-"autocmd BufWritePre * :call TrimWhitespace()
-"autocmd FileType typescript :call GoYCM()
-"autocmd FileType cpp,cxx,h,hpp,c :call GoCoc()
 
 " Lua custom formatter
 let g:formatdef_lua = "'lua-format'"
