@@ -1,5 +1,6 @@
 syntax on
 
+set hidden
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -37,7 +38,8 @@ Plug 'vim-utils/vim-man'
 Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plug 'jremmen/vim-ripgrep'
 Plug 'Chiel92/vim-autoformat'
-Plug 'https://github.com/tpope/vim-endwise.git'
+Plug 'tpope/vim-endwise'
+Plug 'dense-analysis/ale'
 call plug#end()
 
 colorscheme gruvbox
@@ -73,39 +75,29 @@ nnoremap <silent> <Leader>- :vertical resize -5<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-fun! GoYCM()
-    nnoremap <buffer> <silent> <leader>gd :YcmCompleter GoTo<CR>
-    nnoremap <buffer> <silent> <leader>gr :YcmCompleter GoToReferences<CR>
-    nnoremap <buffer> <silent> <leader>rr :YcmCompleter RefactorRename<space>
-endfun
 
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
+" Ale settings
+nmap <silent> <C-e> <Plug>(ale_next_wrap)
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+    let l:all_errors = l:counts.error + l:counts.style_error
+
+    return l:counts.total == 0 ? 'OK' : printf(
+    let l:all_non_errors = l:counts.total - l:all_errors
+                \   '%d⨉ %d⚠ ',
+                \   all_non_errors,
+                \   all_errors
+                \)
 endfunction
 
-fun! GoCoc()
-    inoremap <buffer> <silent><expr> <TAB>
-                \ pumvisible() ? "\<C-n>" :
-                \ <SID>check_back_space() ? "\<TAB>" :
-                \ coc#refresh()
 
-    inoremap <buffer> <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-    inoremap <buffer> <silent><expr> <C-space> coc#refresh()
+set statusline+=%=
+set statusline+=\ %{LinterStatus()}
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 1
+"let g:ale_sign_error = '●'
+"let g:ale_sign_warning = '.'
 
-    " GoTo code navigation.
-    nmap <buffer> <leader>gd <Plug>(coc-definition)
-    nmap <buffer> <leader>gy <Plug>(coc-type-definition)
-    nmap <buffer> <leader>gi <Plug>(coc-implementation)
-    nmap <buffer> <leader>gr <Plug>(coc-references)
-    nnoremap <buffer> <leader>cr :CocRestart
-endfun
-
-fun! TrimWhitespace()
-    let l:save = winsaveview()
-    keeppatterns %s/\s\+$//e
-    call winrestview(l:save)
-endfun
 
 " Lua custom formatter
 let g:formatdef_lua = "'lua-format'"
