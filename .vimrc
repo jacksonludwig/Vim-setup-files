@@ -3,8 +3,8 @@ let PLUG_DIR = '~/vim/plugged'
 
 let on_windows=0
 if has("win64") || has("win32")
-    set on_windows=1
-    set PLUG_DIR=WIN_PLUG_DIR
+    let on_windows=1
+    let PLUG_DIR=WIN_PLUG_DIR
 endif
 
 " PLUGIN CALLS
