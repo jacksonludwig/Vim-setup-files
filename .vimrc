@@ -1,6 +1,6 @@
 " PLUGIN CALLS
 call plug#begin('C:\\Users\\Jackson\\vimfiles\\plugged')
-Plug 'sainnhe/gruvbox-material'
+Plug 'https://github.com/gruvbox-community/gruvbox.git'
 call plug#end()
 
 " CORE
@@ -74,5 +74,4 @@ nnoremap <silent> <Leader>- :vertical resize -5<CR>
 
 " LATE CHANGES, THEMES, etc
 set background=dark
-let g:gruvbox_material_background = 'medium'
-colorscheme gruvbox-material
+colorscheme gruvbox
