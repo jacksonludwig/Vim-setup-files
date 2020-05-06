@@ -1,3 +1,8 @@
+" PLUGIN CALLS
+call plug#begin('C:\\Users\\Jackson\\vimfiles\\plugged')
+Plug 'sainnhe/gruvbox-material'
+call plug#end()
+
 " CORE
 set encoding=utf-8
 set guioptions-=m  "menu bar
@@ -25,38 +30,36 @@ set undofile
 set incsearch
 set relativenumber number
 
-"
 " Give more space for displaying messages.
 " set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=50
+set updatetime=300
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
+" color column
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
+" font
 set guifont=Source_Code_Pro:h11:cANSI:qDRAFT
 
+" open files to the right of netrw
 let g:netrw_altv=1
 
 " status line
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c\ %)%P
+set statusline=%<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c\ %)%P
 set laststatus=2
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-call plug#begin('C:\\Users\\Jackson\\vimfiles\\plugged')
-Plug 'sainnhe/gruvbox-material'
-call plug#end()
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" syntax highlighting
 set autoindent
 filetype plugin indent on
 syntax on
 
+" KEY MAPPING
 let mapleader = " "
 
 let g:netrw_browse_split = 2
@@ -71,6 +74,6 @@ nnoremap <silent> <leader>pe :vertical resize 30<CR>
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
 
-""""""""""""""""""""
+" LATE CHANGES, THEMES, etc
 let g:gruvbox_material_background = 'medium'
 colorscheme gruvbox-material
