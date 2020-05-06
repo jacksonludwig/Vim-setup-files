@@ -11,8 +11,6 @@ set guioptions-=r  "scrollbar
 set guioptions-=L
 filetype off
 
-set background=dark
-
 set backspace=indent,eol,start
 set hidden
 set noerrorbells
@@ -75,5 +73,6 @@ nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
 
 " LATE CHANGES, THEMES, etc
+set background=dark
 let g:gruvbox_material_background = 'medium'
 colorscheme gruvbox-material
