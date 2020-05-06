@@ -33,6 +33,7 @@ set smartcase
 set noswapfile
 set nobackup
 
+set undodir=
 if on_windows == 1
     set undodir=C:\\Users\\Jackson\\vimfiles\\undodir
 else
