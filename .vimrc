@@ -1,5 +1,14 @@
+let WIN_PLUG_DIR = 'C:\\Users\\Jackson\\vimfiles\\plugged'
+let PLUG_DIR = '~/vim/plugged'
+
+let on_windows=0
+if has("win64") || has("win32")
+    set on_windows=1
+    set PLUG_DIR=WIN_PLUG_DIR
+endif
+
 " PLUGIN CALLS
-call plug#begin('C:\\Users\\Jackson\\vimfiles\\plugged')
+call plug#begin(PLUG_DIR)
 Plug 'https://github.com/gruvbox-community/gruvbox.git'
 call plug#end()
 
@@ -8,7 +17,7 @@ set encoding=utf-8
 set guioptions-=m  "menu bar
 set guioptions-=T  "toolbar
 set guioptions-=r  "scrollbar
-set guioptions-=L
+set guioptions-=L  "left scrollbar
 filetype off
 
 set backspace=indent,eol,start
@@ -23,7 +32,13 @@ set nowrap
 set smartcase
 set noswapfile
 set nobackup
-set undodir=C:\\Users\\Jackson\\vimfiles\\undodir
+
+if on_windows == 1
+    set undodir=C:\\Users\\Jackson\\vimfiles\\undodir
+else
+    set undodir=~/vim/undodir
+endif
+
 set undofile
 set incsearch
 set relativenumber number
@@ -43,7 +58,11 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " font
-set guifont=Source_Code_Pro:h11:cANSI:qDRAFT
+if on_windows == 1
+    set guifont=Source_Code_Pro:h11:cANSI:qDRAFT
+else
+    set guifont=Source\ Code\ Pro\ 12
+endif
 
 " open files to the right of netrw
 let g:netrw_altv=1
@@ -75,3 +94,4 @@ nnoremap <silent> <Leader>- :vertical resize -5<CR>
 " LATE CHANGES, THEMES, etc
 set background=dark
 colorscheme gruvbox
+
