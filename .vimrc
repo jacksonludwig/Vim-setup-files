@@ -1,8 +1,8 @@
 " CORE
+set encoding=utf-8
 set guioptions-=m  "menu bar
 set guioptions-=T  "toolbar
 set guioptions-=r  "scrollbar
-set encoding=utf-8
 set guioptions-=L
 filetype off
 
@@ -70,4 +70,5 @@ nnoremap <silent> <leader>pe :vertical resize 30<CR>
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
 
+""""""""""""""""""""
 colorscheme gruvbox
