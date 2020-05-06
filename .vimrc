@@ -45,10 +45,11 @@ let g:netrw_altv=1
 
 " status line
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c\ %)%P
+set laststatus=2
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 
 call plug#begin('C:\\Users\\Jackson\\vimfiles\\plugged')
-Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -71,4 +72,5 @@ nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
 
 """"""""""""""""""""
-colorscheme gruvbox
+let g:gruvbox_material_background = 'medium'
+colorscheme gruvbox-material
