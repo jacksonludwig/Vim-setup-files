@@ -3,12 +3,10 @@ set guioptions-=m  "menu bar
 set guioptions-=T  "toolbar
 set guioptions-=r  "scrollbar
 set encoding=utf-8
+set guioptions-=L
 filetype off
 
 set background=dark
-syntax on
-set autoindent
-filetype plugin indent on
 
 set backspace=indent,eol,start
 set hidden
@@ -44,6 +42,9 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 set guifont=Source_Code_Pro:h11:cANSI:qDRAFT
 
 let g:netrw_altv=1
+
+" status line
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c\ %)%P
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 
 call plug#begin('C:\\Users\\Jackson\\vimfiles\\plugged')
@@ -51,6 +52,9 @@ Plug 'morhetz/gruvbox'
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
+set autoindent
+filetype plugin indent on
+syntax on
 
 let mapleader = " "
 
