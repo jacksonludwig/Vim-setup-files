@@ -115,7 +115,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-alias cdc='cd /mnt/c'
-alias cde='cd /mnt/e'
-alias cdd='cd /mnt/d'
