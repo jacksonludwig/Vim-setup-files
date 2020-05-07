@@ -76,8 +76,6 @@ syntax on
 
 " KEY MAPPING
 let mapleader = " "
-
-let g:netrw_browse_split = 0
 let g:netrw_banner = 0
 
 nnoremap <leader>h :wincmd h<CR>
