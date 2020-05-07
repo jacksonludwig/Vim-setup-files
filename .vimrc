@@ -43,6 +43,7 @@ endif
 set undofile
 set incsearch
 set relativenumber number
+set autochdir
 
 " Give more space for displaying messages.
 " set cmdheight=2
