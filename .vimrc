@@ -14,10 +14,10 @@ call plug#end()
 
 " CORE
 set encoding=utf-8
-set guioptions-=m  "menu bar
-set guioptions-=T  "toolbar
-set guioptions-=r  "scrollbar
-set guioptions-=L  "left scrollbar
+" Next 3 lines only keep autoselect and close note from ui
+set guioptions=
+set guioptions+=a
+set guioptions+=c
 filetype off
 
 set backspace=indent,eol,start
