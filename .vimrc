@@ -19,7 +19,6 @@ set guioptions=
 set guioptions+=a
 set guioptions+=c
 filetype off
-
 set backspace=indent,eol,start
 set hidden
 set noerrorbells
@@ -66,9 +65,6 @@ else
     set guifont=Source\ Code\ Pro\ 12
 endif
 
-" open files to the right of netrw
-let g:netrw_altv=1
-
 " status line
 set statusline=%<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c\ %)%P
 set laststatus=2
@@ -83,7 +79,7 @@ let mapleader = " "
 
 let g:netrw_browse_split = 2
 let g:netrw_banner = 0
-let g:netrw_winsize = 25
+"let g:netrw_winsize = 25
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
