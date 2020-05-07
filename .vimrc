@@ -9,7 +9,7 @@ endif
 
 " PLUGIN CALLS
 call plug#begin(PLUG_DIR)
-Plug 'https://github.com/gruvbox-community/gruvbox.git'
+Plug 'sainnhe/gruvbox-material'
 call plug#end()
 
 " CORE
@@ -94,5 +94,6 @@ nnoremap <silent> <Leader>- :vertical resize -5<CR>
 
 " LATE CHANGES, THEMES, etc
 set background=dark
-colorscheme gruvbox
-
+let g:gruvbox_material_background='medium'
+let g:gruvbox_material_palette='mix'
+colorscheme gruvbox-material
