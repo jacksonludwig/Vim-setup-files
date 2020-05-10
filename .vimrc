@@ -18,6 +18,7 @@ set encoding=utf-8
 set guioptions=
 set guioptions+=a
 set guioptions+=c
+" helps with windows icons maybe
 set guioptions+=i
 filetype off
 set backspace=indent,eol,start
