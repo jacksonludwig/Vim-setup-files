@@ -18,6 +18,7 @@ set encoding=utf-8
 set guioptions=
 set guioptions+=a
 set guioptions+=c
+set guioptions+=i
 filetype off
 set backspace=indent,eol,start
 set hidden
