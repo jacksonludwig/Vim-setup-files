@@ -10,6 +10,7 @@ endif
 " PLUGIN CALLS
 call plug#begin(PLUG_DIR)
 Plug 'sainnhe/gruvbox-material'
+Plug 'https://github.com/tbastos/vim-lua.git'
 call plug#end()
 
 " CORE
