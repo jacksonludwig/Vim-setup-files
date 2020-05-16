@@ -11,6 +11,7 @@ endif
 call plug#begin(PLUG_DIR)
 Plug 'sainnhe/gruvbox-material'
 Plug 'https://github.com/tbastos/vim-lua.git'
+Plug 'https://github.com/tpope/vim-endwise.git'
 call plug#end()
 
 " CORE
