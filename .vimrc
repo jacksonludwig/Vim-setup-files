@@ -10,8 +10,8 @@ endif
 " PLUGIN CALLS
 call plug#begin(PLUG_DIR)
 Plug 'sainnhe/gruvbox-material'
-Plug 'https://github.com/tbastos/vim-lua.git'
 Plug 'https://github.com/tpope/vim-endwise.git'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " CORE
@@ -22,15 +22,14 @@ set guioptions+=a
 set guioptions+=c
 " helps with windows icons maybe
 set guioptions+=i
-filetype off
 set backspace=indent,eol,start
 set hidden
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
+set autoindent
 set smartindent
-set nu
 set nowrap
 set smartcase
 set noswapfile
@@ -73,11 +72,6 @@ endif
 set statusline=%<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c\ %)%P
 set laststatus=2
 
-" syntax highlighting
-set autoindent
-filetype plugin indent on
-syntax on
-
 " KEY MAPPING
 let mapleader = " "
 let g:netrw_banner = 0
@@ -90,6 +84,10 @@ nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <silent> <leader>pe :vertical resize 30<CR>
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
+
+" syntax highlighting
+filetype plugin indent on
+syntax on
 
 " LATE CHANGES, THEMES, etc
 set background=dark
